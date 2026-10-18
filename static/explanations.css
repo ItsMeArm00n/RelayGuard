@@ -1,0 +1,13 @@
+dialog#detail{max-width:650px;max-height:90vh;overflow-y:auto}
+.why-score{margin:20px 0;padding:18px;border:1px solid #dce6da;background:#fafcf8;border-radius:9px}
+.explain-heading{display:flex;align-items:center;justify-content:space-between;gap:8px}.explain-heading h2{margin:0}
+.explain-method{font-size:8px;letter-spacing:1px;color:#7f937a;background:#edf3e9;padding:5px 7px;border-radius:4px;white-space:nowrap}
+.explain-summary{font-size:12px;color:#3f5a4b;line-height:1.7;margin:12px 0 16px}
+.score-journey{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:8px;align-items:center;background:#eef3e9;padding:12px;border-radius:6px;margin-bottom:20px}
+.score-journey small{display:block;font-size:9px;color:#82907b;margin-bottom:5px}.score-journey strong{font:600 17px Manrope,Arial,sans-serif;font-variant-numeric:tabular-nums}.score-journey>span{color:#a4b29e}
+.attribution-legend{display:flex;justify-content:space-between;color:#8b9786;font-size:9px;margin-bottom:14px}.attribution{margin:0 0 12px}.attribution-label{display:flex;justify-content:space-between;font-size:11px;margin-bottom:5px}.attribution-label strong{font-size:10px;font-variant-numeric:tabular-nums}.raises{color:#a66f2d}.lowers{color:#4c8066}
+.attribution-track{height:13px;position:relative;border-radius:3px;background:linear-gradient(to right,#eef3ec 49.8%,#c4d1bf 49.8%,#c4d1bf 50.2%,#f6f0e6 50.2%);overflow:hidden}.attribution-bar{position:absolute;height:100%;border-radius:3px;animation:contribution-in .45s ease both}.attribution-bar.raises{background:#c99a57}.attribution-bar.lowers{background:#72a287}
+.reconciled{font-size:9px;color:#6c8a68;margin:15px 0 8px}.explain-notes{border-top:1px solid #e2e9dd;margin-top:12px;padding-top:12px;font-size:10px;color:#7b8a74}.explain-notes summary{cursor:pointer;color:#536e4f}.explain-notes p{font-size:10px;margin:10px 0}.explain-loading{padding:12px 0;color:#82947a;font-size:11px}.explain-loading::before{content:'';display:inline-block;width:9px;height:9px;border:2px solid #dbe7d5;border-top-color:#548569;border-radius:50%;margin-right:8px;animation:explain-spin .8s linear infinite}.explain-unavailable{font-size:11px;margin-top:10px;color:#8f764b}
+@keyframes contribution-in{from{opacity:.2;transform:scaleY(.3)}to{opacity:1;transform:scaleY(1)}}@keyframes explain-spin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.attribution-bar,.explain-loading::before{animation:none}}
+@media(max-width:500px){.why-score{padding:13px}.score-journey{gap:5px;padding:10px}.score-journey strong{font-size:14px}.explain-method{font-size:7px}.score-journey small{font-size:8px}}

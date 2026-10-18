@@ -1,0 +1,21 @@
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const path=require('node:path');
+const vm=require('node:vm');
+const code=fs.readFileSync(path.join(__dirname,'static/review-alerts.js'),'utf8');
+// Evaluate only the pure tracker; browser wiring is verified in the live UI.
+const context=vm.createContext({});
+vm.runInContext(code.slice(0,code.indexOf('(()=>{'))+';globalThis.Tracker=ReviewAlertTracker',context);
+const tracker=new context.Tracker();
+const flagged=(id,review='Unreviewed')=>({id,flagged:true,review});
+assert.equal(tracker.update([]).arrivals.length,0);
+assert.equal(tracker.update([flagged('A')]).arrivals.length,1,'An incoming flag requests attention');
+assert.equal(tracker.update([flagged('A')]).arrivals.length,0,'Rendering or filtering again must not repeat attention');
+assert.equal(tracker.update([flagged('A','Needs investigation')]).arrivals.length,0,'An existing investigation must not flash as a new alert');
+assert.equal(tracker.update([flagged('A'),flagged('B')]).arrivals.length,1,'Only newly flagged payments trigger another cue');
+assert.equal(tracker.update([flagged('A','Dismissed'),flagged('B','Dismissed')]).pending.length,0,'Dismissed payments clear attention');
+assert.equal(tracker.update([flagged('A')]).arrivals.length,1,'A reopened review can request attention again');
+tracker.update([]);
+assert.equal(tracker.update([flagged('A')]).arrivals.length,1,'Resetting the event history resets tracking');
+assert.equal(tracker.update([{id:'L',flagged:false,review:'Unreviewed'}]).pending.length,0,'Low-risk payments never request review attention');
+console.log('Review attention scenarios passed.');

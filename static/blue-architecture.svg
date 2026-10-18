@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 900" fill="none">
+  <!-- Folded blue planes and precision routes; entirely decorative. -->
+  <path d="M1100-80 548 238 1100 557V-80Z" fill="#dceaff"/>
+  <path d="m1100 13-400 231 400 231" fill="#c1d9fb"/>
+  <path d="m1100 102-245 142 245 142" fill="#a3c5f4"/>
+  <path d="m1100 184-103 60 103 60" fill="#6298e0"/>
+  <path d="m1100-20-457 264 457 264" stroke="#80ade8" stroke-width="1"/>
+  <path d="m1100 67-307 177 307 177" stroke="#4d88d6" stroke-width="1"/>
+  <path d="m1100 156-153 88 153 88" stroke="#fff" stroke-width="1.5"/>
+  <path d="m1100 538-458-264-135 78 458 264 135-78Z" fill="#d2e3fb" fill-opacity=".7"/>
+  <path d="m1100 568-458-264-135 78 458 264 135-78Z" fill="#fff" fill-opacity=".8" stroke="#a7c6ed" stroke-width="1"/>
+  <path d="m1100 597-458-264-135 78 458 264 135-78Z" fill="#e8f1ff" stroke="#c2d6f1" stroke-width="1"/>
+  <path d="m507 352 458 264v59L507 411v-59Z" fill="#89b1e8" fill-opacity=".16"/>
+  <path d="m1100 538-135 78v59l135-78v-59Z" fill="#4683d0" fill-opacity=".18"/>
+  <path d="M1100 702H816l-81-81H418l-74-74H164" stroke="#88b1e4" stroke-opacity=".6"/>
+  <path d="M1100 724H804l-81-81H406l-74-74H122" stroke="#bfd3ee"/>
+  <path d="M1100 748H792l-81-81H394l-74-74H78" stroke="#d2dff1"/>
+  <path d="M1100 24H834L722 136H477L351 262H184" stroke="#b1ccec"/>
+  <path d="M1100 42H845L733 154H488L362 280H211" stroke="#d2e1f4"/>
+  <path d="m478 136-126 126H184" stroke="#236dce" stroke-opacity=".35" stroke-width="2"/>
+  <path d="m643 333 322 186" stroke="#fff" stroke-width="2"/>
+  <g fill="#fff" stroke="#80a8df">
+    <rect x="180" y="258" width="8" height="8" rx="1"/>
+    <rect x="160" y="543" width="8" height="8" rx="1"/>
+    <rect x="414" y="617" width="8" height="8" rx="1"/>
+    <rect x="812" y="698" width="8" height="8" rx="1"/>
+  </g>
+  <g fill="#377acb" fill-opacity=".3">
+    <rect x="550" y="210" width="3" height="3"/>
+    <rect x="550" y="221" width="3" height="3"/>
+    <rect x="561" y="210" width="3" height="3"/>
+    <rect x="561" y="221" width="3" height="3"/>
+  </g>
+</svg>

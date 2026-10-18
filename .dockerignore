@@ -1,0 +1,15 @@
+.venv
+runtime
+__pycache__
+*.zip
+*.csv
+.git
+*.pem
+*.key
+.env
+.env.*
+*.joblib
+*.sqlite*
+*.pkl
+*.pickle
+data

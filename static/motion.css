@@ -1,0 +1,31 @@
+/* Quiet, task-focused movement. Reduced-motion preference disables decoration. */
+:root{--ease:cubic-bezier(.2,.75,.25,1)}
+html{scroll-behavior:smooth}
+button,.button,nav button,input,select,textarea,.stats article,.panel{transition:background-color .2s,color .2s,border-color .2s,box-shadow .25s,transform .25s var(--ease)}
+button:hover,.button:hover{transform:translateY(-1px);box-shadow:0 4px 12px #194b3410}
+button:active,.button:active{transform:translateY(0) scale(.98)}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid #459c7d;outline-offset:3px}
+.stats article:hover{transform:translateY(-3px);box-shadow:0 8px 24px #204d3610;border-color:#b9cebd}
+aside{animation:sidebar-in .5s var(--ease) both}header{animation:fade-in .5s ease both}.heading{animation:rise-in .55s var(--ease) both}.source-banner{animation:rise-in .6s .06s var(--ease) both}
+.page:not(.hidden){animation:rise-in .38s var(--ease) both}
+.stats article{animation:rise-in .55s var(--ease) both}.stats article:nth-child(2){animation-delay:.06s}.stats article:nth-child(3){animation-delay:.12s}.stats article:nth-child(4){animation-delay:.18s}
+.grid>.panel{animation:rise-in .55s .1s var(--ease) both}.grid>.panel:nth-child(2){animation-delay:.18s}
+.dot{box-shadow:0 0 0 3px #68a78212}.replaying .dot{animation:status-pulse 2s ease-in-out infinite}.replaying .replay-panel{border-color:#8ab39a;box-shadow:0 0 0 3px #79a78310}
+.chart .bar{transform-origin:bottom;transition:height .4s var(--ease),background-color .3s}.chart .bar.new-bar{animation:bar-grow .45s var(--ease) both}
+tr.new-payment{animation:row-arrive .7s var(--ease) both}tr.new-payment td{animation:row-wash 1.5s ease-out both}
+tbody tr{transition:background-color .18s}
+dialog[open]{animation:dialog-in .24s var(--ease) both}dialog[open]::backdrop{animation:fade-in .2s ease both}
+#toast{animation:toast-in .25s var(--ease) both}
+button:disabled{animation:working 1.4s ease-in-out infinite;transform:none}
+.stats strong.value-changing{color:#23634a}
+@keyframes rise-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes sidebar-in{from{opacity:0;transform:translateX(-12px)}to{opacity:1;transform:translateX(0)}}
+@keyframes fade-in{from{opacity:0}to{opacity:1}}
+@keyframes bar-grow{from{transform:scaleY(.05);opacity:.3}to{transform:scaleY(1);opacity:1}}
+@keyframes row-arrive{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
+@keyframes row-wash{from{background:#e2f0e4}to{background:transparent}}
+@keyframes dialog-in{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes toast-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes status-pulse{50%{box-shadow:0 0 0 6px #68a78216}}
+@keyframes working{50%{opacity:.65}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}

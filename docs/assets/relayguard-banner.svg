@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-labelledby="title desc">
+  <title id="title">RelayGuard</title>
+  <desc id="desc">Payment intelligence, explained. Predictive scoring, transparent evidence, human decisions.</desc>
+  <rect width="1200" height="300" fill="#08284a"/>
+  <path d="M900 0h300v300H770l150-150z" fill="#0c3b69"/>
+  <path d="M1010 0h190v300h-92l-130-150z" fill="#10518b"/>
+  <g fill="none" stroke="#77b8f0" stroke-width="1" opacity=".4">
+    <path d="M830 0 710 150l120 150M920 0 800 150l120 150M1010 0 890 150l120 150"/>
+    <path d="M730 70h255M690 150h295M730 230h255"/>
+  </g>
+  <rect x="55" y="61" width="5" height="178" fill="#439cff"/>
+  <text x="84" y="91" font-family="Segoe UI,Arial,sans-serif" font-size="14" letter-spacing="3" fill="#8ec6fb">IBM Z DATATHON 2026</text>
+  <text x="80" y="162" font-family="Segoe UI,Arial,sans-serif" font-size="64" font-weight="700" letter-spacing="-2" fill="#fff">RelayGuard</text>
+  <text x="84" y="202" font-family="Segoe UI,Arial,sans-serif" font-size="23" fill="#d9eaff">Payment intelligence, explained.</text>
+  <text x="84" y="239" font-family="Segoe UI,Arial,sans-serif" font-size="14" fill="#9bbbd9">PREDICTIVE SCORING   /   TRANSPARENT EVIDENCE   /   HUMAN DECISIONS</text>
+  <g transform="translate(1030 115)" fill="none" stroke="#d9eaff" stroke-width="3">
+    <path d="m0 0 35-14L70 0v29c0 26-35 45-35 45S0 55 0 29z"/>
+    <path d="M17 28h12l7-13 9 26 7-13h10"/>
+  </g>
+</svg>

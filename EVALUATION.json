@@ -1,0 +1,114 @@
+{
+  "split": {
+    "train": 244120,
+    "validation": 51549,
+    "test": 24264
+  },
+  "protocol": {
+    "policy": "Maximise validation F1 under 0.5% false-positive rate and recall at least V2 validation recall.",
+    "candidate": "Sequence cost-aware",
+    "validation_report": {
+      "precision": 0.9322033898305084,
+      "recall": 0.7819905213270142,
+      "average_precision": 0.8620249768900067,
+      "f1": 0.8505154639175257,
+      "threshold": 0.9859365975144929,
+      "tp": 165,
+      "fp": 12,
+      "fn": 46,
+      "tn": 51326,
+      "test_count": 51549,
+      "test_fraud": 211,
+      "false_positive_rate": 0.00023374498422221355
+    },
+    "training": "step <400; all fraud and every 24th legitimate original row",
+    "validation": "steps 400\u2013554; original row index modulo 8 =1",
+    "test": "step >=555; original row index modulo 8 =3; disjoint from published V1/V2 tests; never used for selection",
+    "history": "Sender/recipient context from retained observations. Six stream features computed from ALL strictly earlier original rows, without labels. No current/future row included.",
+    "limitations": "Synthetic data. Same-hour file order assumed. Full-stream context may expose generator regularities. Replay uses trusted past-only source context snapshots; manual payments have observed-session context only. Scores are not calibrated; no real-bank claim."
+  },
+  "validation_candidates": [
+    {
+      "name": "Sequence unweighted",
+      "validation": {
+        "precision": 0.9162011173184358,
+        "recall": 0.7772511848341233,
+        "average_precision": 0.8537425986010345,
+        "f1": 0.841025641025641,
+        "threshold": 0.9581765320313254,
+        "tp": 164,
+        "fp": 15,
+        "fn": 47,
+        "tn": 51323,
+        "test_count": 51549,
+        "test_fraud": 211,
+        "false_positive_rate": 0.00029218123027776693
+      }
+    },
+    {
+      "name": "Sequence moderate",
+      "validation": {
+        "precision": 0.9016393442622951,
+        "recall": 0.7819905213270142,
+        "average_precision": 0.8555268567685415,
+        "f1": 0.8375634517766497,
+        "threshold": 0.9775631017135422,
+        "tp": 165,
+        "fp": 18,
+        "fn": 46,
+        "tn": 51320,
+        "test_count": 51549,
+        "test_fraud": 211,
+        "false_positive_rate": 0.00035061747633332034
+      }
+    },
+    {
+      "name": "Sequence cost-aware",
+      "validation": {
+        "precision": 0.9322033898305084,
+        "recall": 0.7819905213270142,
+        "average_precision": 0.8620249768900067,
+        "f1": 0.8505154639175257,
+        "threshold": 0.9859365975144929,
+        "tp": 165,
+        "fp": 12,
+        "fn": 46,
+        "tn": 51326,
+        "test_count": 51549,
+        "test_fraud": 211,
+        "false_positive_rate": 0.00023374498422221355
+      }
+    }
+  ],
+  "reports": {
+    "Previous v2 (same fresh holdout)": {
+      "precision": 0.5333333333333333,
+      "recall": 0.47761194029850745,
+      "average_precision": 0.4747318797214183,
+      "f1": 0.5039370078740157,
+      "threshold": 0.8977390204623704,
+      "tp": 128,
+      "fp": 112,
+      "fn": 140,
+      "tn": 23884,
+      "test_count": 24264,
+      "test_fraud": 268,
+      "false_positive_rate": 0.004667444574095682
+    },
+    "Sequence v4": {
+      "precision": 0.9622641509433962,
+      "recall": 0.7611940298507462,
+      "average_precision": 0.8775613595273116,
+      "f1": 0.85,
+      "threshold": 0.9859365975144929,
+      "tp": 204,
+      "fp": 8,
+      "fn": 64,
+      "tn": 23988,
+      "test_count": 24264,
+      "test_fraud": 268,
+      "false_positive_rate": 0.0003333888981496916
+    }
+  },
+  "promoted": true
+}

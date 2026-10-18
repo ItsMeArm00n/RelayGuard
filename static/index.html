@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#ffffff"><meta name="description" content="RelayGuard: explainable transaction intelligence and human review."><title>RelayGuard | Risk Intelligence</title><link rel="stylesheet" href="/static/enterprise.css?v=6.9"></head><body>
+<a class="skip-link" href="#main">Skip to workspace</a>
+<aside class="sidebar">
+<a class="brand" href="/" aria-label="RelayGuard home"><span class="brand-mark"><svg viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M18 3 31 10.5v15L18 33 5 25.5v-15Z" stroke="currentColor" stroke-width="2"/><path d="m5 10.5 13 7.5 13-7.5M18 18v15M11.5 6.8l13 7.5v7.5l-6.5 3.8" stroke="currentColor" stroke-width="2"/></svg></span><span>RelayGuard<small>RISK INTELLIGENCE</small></span></a>
+<div class="workspace"><span class="workspace-avatar">S</span><div><strong>Sandbox Bank</strong><small>Demonstration workspace</small></div><span class="workspace-lock" data-icon="lock"></span></div>
+<div class="nav-label">WORKSPACE</div>
+<nav aria-label="Workspace navigation">
+<button class="active" data-page="overview" aria-current="page"><i data-icon="grid"></i><span>Overview</span><span class="nav-active-dot"></span></button><button data-page="alerts"><i data-icon="shield"></i><span>Review queue</span><b id="nav-count">0</b></button><button data-page="performance"><i data-icon="chart"></i><span>Model studio</span></button><button data-page="setup"><i data-icon="settings"></i><span>Data & settings</span></button>
+</nav>
+<div class="sidebar-note"><div class="mini-orbit" aria-hidden="true"><span></span><span></span><span></span></div><strong>Intelligence with context.</strong><p>Every score has a story.<br>Keep the final decision human.</p><button class="sidebar-link" data-go="performance">Explore the model <i data-icon="arrow"></i></button></div>
+<div class="aside-bottom"><div class="connection"><span class="dot"></span><span id="connection-label">Connecting to backend</span></div><p id="runtime">Checking runtime…</p><div class="analyst"><span class="avatar">SB</span><div><strong>Sandbox analyst</strong><small>Local demo session</small></div><span data-icon="lock"></span></div></div>
+</aside>
+<main id="main">
+<header class="topbar">
+<div class="breadcrumbs"><span data-icon="layers"></span> Workspace <span>/</span><strong id="breadcrumb-page">Overview</strong></div><div class="header-right"><span class="demo-label"><span></span> SANDBOX</span><span class="header-divider"></span><span class="header-date" id="today"></span><span class="avatar">SB</span></div>
+</header>
+<div class="content"><div class="heading"><div><div class="eyebrow"><span></span> TRANSACTION INTELLIGENCE</div><h1 id="page-title">Risk overview</h1><p id="page-description">A clear view of your payments. Context for every decision.</p></div><a class="button secondary export-button" href="/api/export"><i data-icon="download"></i>Export review log</a></div>
+<div class="source-banner"><div class="source-symbol" data-icon="database"></div><div><strong id="source">Connecting to your data source…</strong><small>Simulated payment stream · scores are not calibrated probabilities</small></div><span class="source-tag">PAYMENT SANDBOX</span></div>
+<section id="overview" class="page">
+<article class="hero">
+<div class="hero-copy"><span class="hero-kicker"><span></span> YOUR DECISION WORKSPACE</span><h2>See the pattern. <span>Make the call.</span></h2><p>From payment signals to explainable decisions.<br>Your next investigation starts with the full picture.</p><div class="hero-tags"><span><i data-icon="pulse"></i>Predictive scoring</span><span><i data-icon="scan"></i>Explainable results</span><span><i data-icon="user"></i>Human review</span></div></div><div class="signal-visual" aria-hidden="true"><div class="signal-grid"></div><svg class="signal-wires" viewBox="0 0 460 220" fill="none"><path d="M0 40H90Q110 40 110 60V90Q110 110 135 110H218M0 110H218M0 180H90Q110 180 110 160V130Q110 110 135 110"/><path d="M260 110H330Q350 110 350 90V60Q350 40 375 40H460M260 110H460M260 110H330Q350 110 350 130V160Q350 180 375 180H460"/><circle r="3"><animateMotion dur="6s" repeatCount="indefinite" path="M0 110H218"/></circle><circle r="3"><animateMotion dur="7s" repeatCount="indefinite" path="M260 110H330Q350 110 350 90V60Q350 40 375 40H460"/></circle></svg><div class="signal-core"><i data-icon="scan"></i><span>RG</span></div><div class="signal-label signal-in"><span></span> PAYMENT SIGNALS</div><div class="signal-label signal-out"><span></span> DECISION CONTEXT</div><div class="signal-caption">Observe <span>→</span> Understand <span>→</span> Review</div></div>
+</article>
+<div class="stats">
+<article>
+<div class="stat-top"><span>Payments processed</span><i data-icon="arrows"></i></div><strong id="total">0</strong><small><span class="stat-dot"></span>Current event history</small>
+</article>
+<article class="stat-alert">
+<div class="stat-top"><span>Flagged for review</span><i data-icon="shield"></i></div><strong id="flagged">0</strong><small><span class="stat-dot"></span>At each recorded threshold</small>
+</article>
+<article>
+<div class="stat-top"><span>Reviews completed</span><i data-icon="check"></i></div><strong id="reviewed">0</strong><small><span class="stat-dot"></span>Human decisions recorded</small>
+</article>
+<article>
+<div class="stat-top"><span>Median scoring time</span><i data-icon="bolt"></i></div><strong id="latency">—</strong><small>Features + inference · excludes network</small>
+</article>
+</div>
+<div class="grid activity-grid">
+<article class="panel activity-panel">
+<div class="panel-head"><div><span class="section-label">STREAM INTELLIGENCE</span><h2>Transaction activity</h2><p>Risk scores for the latest 48 scored payments.</p></div><span class="chart-window">LIVE WINDOW</span></div><div class="chart-legend"><span><b></b>Model score</span><span><b class="amber"></b>Review suggested</span><span class="threshold-legend">Current threshold <strong id="chart-threshold">—</strong></span></div><div id="chart" class="chart"><div class="empty">Start the replay to see transaction activity.</div></div><div class="chart-foot"><span>EARLIER PAYMENTS</span><span>LATEST PAYMENT <i data-icon="arrow"></i></span></div>
+</article>
+<article class="panel replay-panel">
+<div class="replay-head"><span class="replay-icon" data-icon="pulse"></span><span id="replay-status" class="status-pill">READY</span></div><span class="section-label">PAYMENT REPLAY</span><h2>A moving stream.<br>A clearer perspective.</h2><p>Bring the held-out payment feed into your workspace, one event at a time.</p><button id="play" class="primary"><i data-icon="play"></i>Start replay</button><button id="next" class="text-button">Score one transaction <i data-icon="arrow"></i></button><div class="replay-progress"><div><span id="remaining">— payments remaining</span><span id="replay-percent">0%</span></div><div class="progress-track"><span id="replay-progress"></span></div></div>
+</article>
+</div>
+<article class="panel feed-panel">
+<div class="panel-head"><div><span class="section-label">PAYMENT OPERATIONS</span><h2>Transaction ledger <span class="count-chip" id="loaded-count">0</span></h2><p>Open a payment to inspect its score, evidence, and review history.</p></div><div class="tools"><label class="search-wrap"><i data-icon="search"></i><input id="search" placeholder="Search transactions…" aria-label="Search transactions"><kbd>/</kbd></label><button id="manual-open" class="secondary"><i data-icon="plus"></i>Test payment</button></div></div><div id="feed" class="table-wrap"></div><div class="panel-bottom"><span>Showing up to the latest 1,000 payments</span><span><i data-icon="mouse"></i>Select a row to investigate</span></div>
+</article>
+</section>
+<section id="alerts" class="page hidden">
+<div class="section-intro"><div class="intro-icon" data-icon="shield"></div><div><span class="section-label">HUMAN JUDGMENT, IN THE LOOP</span><h2>Investigate the signal. Keep the context.</h2><p>An alert requests review. It does not establish fraud.</p></div></div><div class="queue-summary">
+<article>
+<span class="queue-dot open"></span><div><strong id="queue-open">0</strong><small>Awaiting review</small></div>
+</article>
+<article>
+<span class="queue-dot investigate"></span><div><strong id="queue-investigate">0</strong><small>Needs investigation</small></div>
+</article>
+<article>
+<span class="queue-dot dismissed"></span><div><strong id="queue-dismissed">0</strong><small>Dismissed</small></div>
+</article>
+<p>Counts within the<br>loaded payment window.</p></div>
+<article class="panel">
+<div class="panel-head"><div><span class="section-label">INVESTIGATION DESK</span><h2>Review queue</h2><p>Inspect evidence and record your next decision.</p></div><label class="filter-label"><i data-icon="filter"></i><select id="review-filter" aria-label="Filter review status"><option>All reviews</option><option>Unreviewed</option><option>Needs investigation</option><option>Dismissed</option></select></label></div><div id="alert-table" class="table-wrap"></div>
+</article>
+</section>
+<section id="performance" class="page hidden">
+<div class="section-intro"><div class="intro-icon" data-icon="chart"></div><div><span class="section-label">MEASURED, NOT ASSUMED</span><h2>A model you can inspect.</h2><p>Chronological held-out results. Model and policy selection use validation data only.</p></div></div><div id="performance-summary" class="performance-summary"></div>
+<article class="panel">
+<div class="panel-head"><div><span class="section-label">THE SAME HOLDOUT. A FAIR COMPARISON.</span><h2>Model & policy comparison</h2><p>Each result retains its evaluated threshold.</p></div><span class="model-chip" id="model-chip">ACTIVE MODEL</span></div><div id="metrics" class="table-wrap"></div><div id="cohort" class="cohort"></div><p class="footnote">Average precision summarises the precision–recall curve. The active archive policy targets at most 0.5% false positives on validation; test rates may differ. Synthetic results do not establish real banking effectiveness.</p><div id="split" class="split"></div>
+</article>
+</section>
+<section id="setup" class="page hidden">
+<div class="section-intro"><div class="intro-icon" data-icon="settings"></div><div><span class="section-label">YOUR DATA. YOUR REVIEW POLICY.</span><h2>Shape the workspace.</h2><p>Manage the data source, configure future alerts, and control the replay.</p></div></div><div class="grid settings-grid">
+<article class="panel padded">
+<div class="card-icon" data-icon="database"></div><span class="section-label">DATA SOURCE</span><h2>Train with your CSV</h2><p>Upload labelled payments to train and evaluate a model. Export your review log first: training replaces the model and clears active events.</p><label class="upload"><i data-icon="upload"></i><strong>Choose a labelled CSV</strong><span id="file-name">CSV · up to 40 MB / 150,000 rows</span><input type="file" id="csv" accept=".csv" aria-label="Choose training CSV"></label><button class="primary" id="train"><i data-icon="bolt"></i>Train & evaluate</button><div class="info-note"><i data-icon="info"></i><p>Website uploads use the simpler CSV training workflow. They do not reproduce the full-stream sequence model.</p></div><details class="schema-details"><summary>Dataset requirements</summary><p>Required: step, type, amount, nameOrig, nameDest, isFraud. Optional: id. Sender and recipient are accepted aliases. At least 100 rows, 10 time steps, and both classes in each time split.</p><p>Balances, labels and fraud flags never enter prediction features. Same-hour file order does not establish actual sub-hour timing.</p></details>
+</article>
+<div class="settings-stack">
+<article class="panel padded policy-card">
+<div class="card-icon" data-icon="sliders"></div><span class="section-label">DECISION POLICY</span><h2>Alert threshold</h2><p>Set the cutoff for future review alerts. Past decisions and published evaluation figures keep their recorded thresholds.</p><label class="threshold-field"><span>Score cutoff</span><input type="number" id="threshold" min="0.000001" max="0.999999" step="any"></label><div class="policy-scale"><span>More sensitive</span><span>More selective</span></div><button id="save-settings" class="primary">Save threshold<i data-icon="arrow"></i></button>
+</article>
+<article class="panel padded reset-card">
+<div class="reset-heading"><div><span class="section-label">SESSION CONTROL</span><h2>Reset simulation</h2></div><i data-icon="reset"></i></div><p>Clear active payments and reviews, keep the model, and restart replay. Export first if you need these records.</p><button id="reset" class="danger">Reset event history</button><a class="archive-link" href="/api/export?archived=true">Download earlier-model reviews<i data-icon="download"></i></a>
+</article>
+</div></div>
+</section>
+<footer>
+<span class="footer-brand"><span></span>RelayGuard <b>/</b> IBM Z Datathon 2026</span><span>Predictive AI. Explainable results. Human decisions.</span>
+</footer>
+</div>
+</main>
+<dialog id="detail" aria-label="Transaction investigation">
+<button class="close" aria-label="Close"><i data-icon="close"></i></button><div id="detail-content"></div>
+</dialog>
+<dialog id="manual" aria-labelledby="manual-title">
+<button class="close" aria-label="Close"><i data-icon="close"></i></button><span class="dialog-icon" data-icon="arrows"></span><div class="eyebrow">PAYMENT SANDBOX</div><h2 id="manual-title">Put a payment to the test.</h2><p>Submit a hypothetical payment with observed-session history. Use a time step at or after the latest scored event.</p>
+<form id="payment-form">
+<label>Transaction ID<input name="id" required maxlength="100"></label><div class="form-row"><label>Sender ID<input name="sender" required value="C100"></label><label>Recipient ID<input name="recipient" required value="C250"></label></div><div class="form-row"><label>Amount<input name="amount" type="number" min="0.01" step="0.01" required value="5000"></label><label>Time step<input name="step" type="number" min="0" required></label></div><label>Payment type<select name="type"><option>TRANSFER</option><option>PAYMENT</option><option>CASH_OUT</option><option>CASH_IN</option><option>DEBIT</option></select></label><div class="info-note"><i data-icon="info"></i><p>Manual tests may lack the full historical context used in replay evaluation.</p></div><button class="primary"><span>Score payment</span><i data-icon="arrow"></i></button>
+</form>
+</dialog>
+<div id="toast" role="status" aria-live="polite"></div><script src="/static/layout.js?v=6.9"></script><script src="/static/app.js?v=2"></script><script src="/static/explanations.js?v=2"></script><script src="/static/experience.js?v=6.1"></script><script src="/static/simple-experience.js?v=4"></script><script src="/static/enterprise-motion.js?v=6.1"></script><script src="/static/background.js?v=6.6"></script><script src="/static/review-alerts.js?v=6.8"></script></body></html>
+
+
+
+
+
+
+
+
